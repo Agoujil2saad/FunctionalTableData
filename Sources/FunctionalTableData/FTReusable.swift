@@ -9,13 +9,13 @@
 import UIKit
 
 /// A type that identifies a dequeueable object. Used by `FunctionalTableData` to increase performance by reusing objects when it needs to, just like `UITableView` and `UICollectionView`.
-public protocol Reusable: AnyObject {
+public protocol FTReusable: AnyObject {
 	/// Unique identifier for the object.
-	static var reuseIdentifier: String { get }
+	static var reuseIdentifierFT: String { get }
 }
 
-extension Reusable {
-	public static var reuseIdentifier: String {
+extension FTReusable {
+	public static var reuseIdentifierFT: String {
 		return NSStringFromClass(self)
 	}
 }

@@ -10,12 +10,12 @@ import UIKit
 
 public extension UICollectionView {	
 	final func registerReusableCell<T: UICollectionViewCell>(_ cellType: T.Type) {
-		register(cellType.self, forCellWithReuseIdentifier: T.reuseIdentifier)
+		register(cellType.self, forCellWithReuseIdentifier: T.reuseIdentifierFT)
 	}
 	
 	final func dequeueReusableCell<T: UICollectionViewCell>(_ cellType: T.Type = T.self, indexPath: IndexPath) -> T {
-		guard let cell = self.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
-			fatalError("Failed to dequeue a cell with identifier \(cellType.reuseIdentifier) matching type \(cellType.self)")
+		guard let cell = self.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifierFT, for: indexPath) as? T else {
+			fatalError("Failed to dequeue a cell with identifier \(cellType.reuseIdentifierFT) matching type \(cellType.self)")
 		}
 		return cell
 	}
@@ -29,4 +29,4 @@ public extension UICollectionView {
 	}
 }
 
-extension UICollectionReusableView: Reusable { }
+extension UICollectionReusableView: FTReusable { }
