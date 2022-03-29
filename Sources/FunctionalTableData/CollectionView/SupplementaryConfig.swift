@@ -15,11 +15,11 @@ public struct Supplementary<View>: CollectionSupplementaryItemConfig where View:
 	}
 	
 	public func register(with collectionView: UICollectionView) {
-		collectionView.register(View.self, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: View.reuseIdentifier)
+        collectionView.register(View.self, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: View.reuseIdentifierFT)
 	}
 	
 	public func dequeueView(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionReusableView {
-		collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: View.reuseIdentifier, for: indexPath)
+		collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:  View.reuseIdentifierFT, for: indexPath)
 	}
 	
 	public func update(_ view: UICollectionReusableView, collectionView: UICollectionView, forIndex index: Int) {
