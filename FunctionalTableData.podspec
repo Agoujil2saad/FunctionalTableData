@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.dependency 'CwlCatchException', '~> 2.0'
 
-  s.source_files = 'Sources/FunctionalTableData/**/*'
+  s.source_files = 'Sources/FunctionalTableData/**/*.{h,m,swift}'
 end
